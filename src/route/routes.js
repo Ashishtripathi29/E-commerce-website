@@ -25,8 +25,6 @@ router.put("/products/:productId", productcontroller.updateProduct)
 router.delete("/products/:productId", productcontroller.deleteProduct)
 
 
-
-
 // cart
 router.post("/users/:userId/cart",auth.authentication,auth.Authorization,cartcontroller.createCart)
 router.put("/users/:userId/cart",auth.authentication,auth.Authorization,cartcontroller.updateCart)

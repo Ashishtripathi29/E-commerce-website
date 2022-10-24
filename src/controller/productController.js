@@ -1,4 +1,4 @@
-const { get } = require("mongoose");
+
 const productModel=require("../model/productModel");
 const { db } = require("../model/userModel");
 const validation=require("../validation/validation")
@@ -152,7 +152,7 @@ const getproduct = async function(req, res) {
 
         let outData=[]
         if (size) {
-                // let arr= size.split(",").map(x => x.trim())
+                let arr= size.split(",").map(x => x.trim())
                 getAllProducts.forEach(e1=>{
                    let sizeArr=e1.availableSizes
                     for(let i=0;i<sizeArr.length;i++){

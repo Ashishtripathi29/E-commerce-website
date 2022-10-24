@@ -103,7 +103,7 @@ const updateCart = async function (req, res) {
 
         productId = productId.trim()
         cartId = cartId.trim()
-        removeProduct = removeProduct.trim() 
+        removeProduct = removeProduct
 
         if (!validation.isValidObjectId(userId)) {
             return res.status(400).send({ status: false, message: "userId must be required and should be valid" })
