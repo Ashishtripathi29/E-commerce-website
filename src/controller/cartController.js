@@ -66,14 +66,14 @@ const createCart = async function (req, res) {
 
             let arr = findCartOfUser.items;
             // console.log(arr)
-            let isAlreadyProduct=true
+            let isAlreadyProduct=false
             for (i of arr) {
                 if (i.productId.toString() === productId) {
                     i.quantity+=parseInt(quantity);
-                    isAlreadyProduct=false
+                    isAlreadyProduct=true
                 }
             }
-            if(isAlreadyProduct) arr.push({ productId: productId, quantity: quantity });
+            if(!isAlreadyProduct) arr.push({ productId: productId, quantity: quantity });
 
             let updatedCart = {
                 items: arr,
